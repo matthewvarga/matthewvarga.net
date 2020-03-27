@@ -9,6 +9,7 @@ import {
     useHistory,
     useLocation
 } from 'react-router-dom';
+import LandingPage from './landing_page/index';
 import './styles/globals';
 
 
@@ -16,7 +17,7 @@ ReactDOM.render(
     <Router>
         <Switch>
             <Route path={"/"}>
-                <p>hello world</p>
+                <LandingPage/>
             </Route>
         </Switch>
     </Router>,

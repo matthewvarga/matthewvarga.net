@@ -1,0 +1,20 @@
+@import '../styles/variables.scss';
+
+.navbar {
+    grid-template-areas: ". . . . . . . links links links links links"; // define grid cols
+    background: $primary-highlight-colour;
+}
+
+.links {
+    grid-area: links;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: Geometos-Rounded;
+    padding: 15px 0;
+}
+
+.link {
+    padding: 5px;
+}

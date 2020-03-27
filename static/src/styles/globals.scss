@@ -10,6 +10,7 @@ html, body, #root {
     height: 100%;
     display: flex;
     flex-direction: column;
+    background: $primary-background-colour;
 }
 
 /******************************************************
@@ -35,12 +36,25 @@ h1, h3 {
     font-family: Geometos-Rounded, Arial, Helvetica, sans-serif;
 }
 
+h1 {
+    font-weight: 700;
+}
+
 h2 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h3 {
+    font-size: 16px;
+}
+
 p {
     font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: $primary-text-highlight-colour;
 }
 
 @font-face {

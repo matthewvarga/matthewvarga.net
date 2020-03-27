@@ -1,0 +1,40 @@
+@import '../../styles/variables.scss';
+
+.header {
+    grid-template-areas: 
+        "name name name name name name . . . . . . "
+        "desc desc desc desc . . . . . . . ."
+        "contact contact . . . . . . . . . ."; 
+    
+    background: $primary-highlight-colour;
+    padding: 0 0 0 30px;
+}
+
+.name, .desc, .contact {
+    color: $primary-text-highlight-colour;   
+}
+
+.name {
+    grid-area: name;
+
+    font-size: 48px;
+    line-height: 46px;
+    margin: 10px 0;
+}
+
+.desc {
+    grid-area: desc;
+    margin: 10px 0;
+}
+
+.contact {
+    grid-area: contact;
+    display: flex;
+    margin: 30px 0 20px 0;
+}
+
+.link {
+    padding: 10px 30px;
+    background: $secondary-highlight-colour;
+    border-radius: 4px;
+}
