@@ -1,0 +1,6 @@
+{
+    "productionMode": false,
+    "address": "localhost",
+    "port": 3000,
+    "buildFiles": "static/dist"
+}

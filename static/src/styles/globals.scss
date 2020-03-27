@@ -1,0 +1,72 @@
+@import "./variables";
+
+/******************************************************
+*                                                     *
+*               MAIN SPACING STYLES                   *
+*                                                     *
+*******************************************************/ 
+html, body, #root {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/******************************************************
+*                                                     *
+*                    TEXT STYLES                      *
+*                                                     *
+*******************************************************/ 
+html, body, #root {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    color: $primary-text-colour;
+}
+
+p, h1, h2, h3, h4, h5 {
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    
+}
+
+h1, h3 {
+    font-family: Geometos-Rounded, Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+    font-family: 'Geometos-Rounded';
+    src: url('../../fonts/geometos-rounded/geometos-rounded.woff') format('woff'), 
+         url('../../fonts/geometos-rounded/geometos-rounded.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Bahnschrift';
+    src: url('../../fonts/bahnschrift/bahnschrift.woff') format('woff'), 
+         url('../../fonts/bahnschrift/bahnschrift.ttf') format('truetype');
+}
+
+
+/******************************************************
+*                                                     *
+*                    GRID STYLES                      *
+*                                                     *
+*******************************************************/ 
+.grid_container {
+    display: grid;
+    grid-template-columns: 72.5px 72.5px 72.5px 72.5px 72.5px 72.5px 72.5px 72.5px 72.5px 72.5px 72.5px 72.5px;
+    grid-template-rows: auto;
+    grid-column-gap: 30px;
+    grid-row-gap: 0;
+    justify-content: center;
+    align-items: center;
+}
