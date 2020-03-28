@@ -1,0 +1,51 @@
+@import '../../../styles/variables.scss';
+
+.project {
+    grid-template-areas: 
+        "prev prev prev prev prev prev desc desc desc desc desc desc"
+    ;
+    
+    &.reverse {
+        grid-template-areas: 
+            "desc desc desc desc desc desc prev prev prev prev prev prev"
+        ;
+    }
+    justify-items: center;
+}
+
+.preview {
+    grid-area: prev;
+
+    width: 550px;
+    height: 450px;
+    background: white;
+    box-shadow: $material-box-shadow-1;
+    border-radius: 4px;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.desc {
+    grid-area: desc;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    margin: 20px 0;
+}
+
+.btn {
+    background: $primary-highlight-colour;
+    padding: 10px 70px;
+    border-radius: 4px;
+    align-self: center;
+    justify-self: center;
+    cursor: pointer;
+    box-shadow: $material-box-shadow-1;
+}

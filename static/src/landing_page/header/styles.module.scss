@@ -7,7 +7,7 @@
         "contact contact . . . . . . . . . ."; 
     
     background: $primary-highlight-colour;
-    padding: 0 0 0 30px;
+    padding: 100px 0 30px 30px;
 }
 
 .name, .desc, .contact {
@@ -35,6 +35,8 @@
 
 .link {
     padding: 10px 30px;
-    background: $secondary-highlight-colour;
+    background: $primary-background-colour;
     border-radius: 4px;
+    color: $primary-text-colour;
+    box-shadow: $material-box-shadow-1;
 }

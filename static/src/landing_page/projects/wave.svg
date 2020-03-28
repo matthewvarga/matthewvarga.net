@@ -1,0 +1,11 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"  width="600" height="80">
+  
+  <rect x="0" y="0" width="600" height="20" fill="#2A9BDD"/>
+  
+  <polygon points="500,0 600,0 600,45 550,30" fill="#2A9BDD"/>
+
+  <path d="M -3 19 q 130 60 306 0" fill="#2A9BDD"/>
+
+  <path d="M 300 20 q 170 -50 300 25" fill="#E9EBEE"/>
+</svg>

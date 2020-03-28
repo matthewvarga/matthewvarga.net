@@ -1,0 +1,25 @@
+@import '../../styles/variables.scss';
+
+.quote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    color: $primary-dark-colour;
+    margin: 5px 0;
+}
+
+.btn {
+    background: $primary-highlight-colour;
+    padding: 10px 70px;
+    border-radius: 4px;
+    align-self: center;
+    justify-self: center;
+    cursor: pointer;
+    box-shadow: $material-box-shadow-1;
+
+    margin: 30px 0;
+}
