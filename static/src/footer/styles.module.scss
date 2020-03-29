@@ -3,20 +3,13 @@
 
 .footer {
     background: $primary-dark-colour;
-
-    // grid-template-areas: 
-    //     "links links links links links . . . . . . ."
-    // ;
 }
 
 .links {
-    // grid-area: links;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
 
-    // 4 cols
     grid-column-start: 1;
     grid-column-end: 5;
 
