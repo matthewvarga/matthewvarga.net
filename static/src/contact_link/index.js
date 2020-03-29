@@ -9,14 +9,10 @@ class ContactLink extends Component {
         this.contactRef = React.createRef();
     }
 
+    // help prevent web scrapers
     contact(e) {
         let mail = this.contactRef.current
-
-        console.log(mail.href);
-
-        if(mail.href) {
-            return;
-        }
+        if(mail.href) return;
 
         e.preventDefault();
         let email = "mailto:";
@@ -39,7 +35,7 @@ class ContactLink extends Component {
                 className={styles.link + " " + (this.props.className ? this.props.className : "")} 
                 onClick={(e) => this.contact(e)}
             >
-                contact
+                {this.props.text || "contact"}
             </a>
         );
     }

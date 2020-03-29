@@ -22,10 +22,10 @@ class Footer extends Component {
         return (
             <div className={"grid_container " + styles.footer}>
                 <div className={styles.links}>
-                    <a href={this.buildResumeLink()} target={"_blank"} className={styles.link}>resume</a>
-                    <a href={"https://www.linkedin.com/in/matthew-varga/"} target={"_blank"} className={styles.link}>linkedin</a>
-                    <a href={"https://github.com/matthewvarga"} target={"_blank"} className={styles.link}>github</a>
-                    <ContactLink className={styles.link} />
+                    <a href={this.buildResumeLink()} target={"_blank"} className={styles.link}>Resume</a>
+                    <a href={"https://www.linkedin.com/in/matthew-varga/"} target={"_blank"} className={styles.link}>LinkedIn</a>
+                    <a href={"https://github.com/matthewvarga"} target={"_blank"} className={styles.link}>GitHub</a>
+                    <ContactLink className={styles.link} text={"Contact"}/>
                 </div>
             </div>
         );
