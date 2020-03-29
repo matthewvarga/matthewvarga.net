@@ -1,18 +1,37 @@
 @import '../styles/variables.scss';
+@import '../styles/mediaQueries.scss';
 
 .navbar {
-    grid-template-areas: ". . . . . . . links links links links links"; // define grid cols
     background: $primary-highlight-colour;
 }
 
 .links {
-    grid-area: links;
-
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     font-family: Geometos-Rounded;
     padding: 15px 0;
+
+    // 4 cols
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+    @include breakpoint(sm) {
+        grid-column-start: 1;
+        grid-column-end: 7;
+    }
+    @include breakpoint(md) {
+        grid-column-start: 4;
+        grid-column-end: 9;
+    }
+    @include breakpoint(lg) {
+        grid-column-start: 6;
+        grid-column-end: 11;
+    }
+    @include breakpoint(xl) {
+        grid-column-start: 8;
+        grid-column-end: 13;
+    }
 }
 
 .link {

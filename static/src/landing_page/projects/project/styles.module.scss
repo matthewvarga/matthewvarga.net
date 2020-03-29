@@ -1,26 +1,64 @@
 @import '../../../styles/variables.scss';
+@import '../../../styles/mediaQueries.scss';
 
 .project {
+    justify-items: center;
+
     grid-template-areas: 
-        "prev prev prev prev prev prev desc desc desc desc desc desc"
+        "prev prev prev prev" 
+        "desc desc desc desc"
     ;
-    
-    &.reverse {
+
+    @include breakpoint(sm) {
         grid-template-areas: 
-            "desc desc desc desc desc desc prev prev prev prev prev prev"
+            "prev prev prev prev prev prev" 
+            "desc desc desc desc desc desc"
         ;
     }
-    justify-items: center;
+    @include breakpoint(md) {
+        grid-template-areas: 
+            "prev prev prev prev desc desc desc desc"
+        ;
+    }
+    @include breakpoint(lg) {
+        grid-template-areas: 
+            "prev prev prev prev prev desc desc desc desc desc"
+        ;
+    }
+    @include breakpoint(xl) {
+        grid-template-areas: 
+            "prev prev prev prev prev prev desc desc desc desc desc desc"
+        ;
+    }
+    
+    
+    &.reverse {
+        @include breakpoint(md) {
+            grid-template-areas: 
+                "desc desc desc desc prev prev prev prev"
+            ;
+        }
+        @include breakpoint(lg) {
+            grid-template-areas: 
+                "desc desc desc desc desc prev prev prev prev prev"
+            ;
+        }
+        @include breakpoint(xl) {
+            grid-template-areas: 
+                "desc desc desc desc desc desc prev prev prev prev prev prev"
+            ;
+        }
+    }
 }
 
 .preview {
     grid-area: prev;
-
-    width: 550px;
-    height: 450px;
     background: white;
     box-shadow: $material-box-shadow-1;
     border-radius: 4px;
+
+    width: 98%;
+    height: 100%;
 }
 
 .img {
@@ -34,10 +72,20 @@
 
     display: flex;
     flex-direction: column;
+
+    padding: 0 10px
 }
 
 .text {
-    margin: 20px 0;
+    margin: 10px 0;
+
+    &:first-child {
+        margin-top: 20px;
+    }
+}
+
+.title {
+    text-align: center;
 }
 
 .btn {

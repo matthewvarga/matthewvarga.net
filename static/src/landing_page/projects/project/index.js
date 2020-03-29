@@ -14,7 +14,7 @@ class Project extends Component {
                     <img className={styles.img} src={this.props.image}></img>
                 </div>
                 <div className={styles.desc}>
-                    <h1 className={styles.text}>{this.props.title}</h1>
+                    <h1 className={styles.text + " " + styles.title}>{this.props.title}</h1>
                     <h2 className={styles.text}>{this.props.shortDesc}</h2>
                     <p className={styles.text}>{this.props.desc}</p>
                     <a className={styles.btn} href={this.props.url} target={"_blank"}>{this.props.linkText}</a>

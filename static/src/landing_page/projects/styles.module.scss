@@ -1,7 +1,17 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mediaQueries.scss';
 
-$minimized-height: 1540px;
-$maximized-height: 2060px;
+$minimized-height-xs: 1765px;
+$minimized-height-sm: 1400px;
+$minimized-height-md: 1540px;
+$minimized-height-lg: 1540px;
+$minimized-height-xl: 1540px;
+
+$maximized-height-xs: 2430px;
+$maximized-height-sm: 2030px;
+$maximized-height-md: 2060px;
+$maximized-height-lg: 2060px;
+$maximized-height-xl: 2060px;
 
 $transition-in: max-height 0.25s ease-in;
 $transition-out: max-height 0.15s ease-out;
@@ -15,16 +25,21 @@ $transition-out: max-height 0.15s ease-out;
     position: relative;
     z-index: $z-index-level-1;
     overflow: hidden;
-    max-height: $maximized-height;
     transition: $transition-in;
+    max-height: $maximized-height-xs;
 
-    &:first-child {
-        margin-top: 70px;
+    @include breakpoint(sm) {
+        max-height: $maximized-height-sm;
     }
 
+
     &.minimized {
-        max-height: $minimized-height;
         transition: $transition-out;
+        max-height: $minimized-height-xs;
+
+        @include breakpoint(sm) {
+            max-height: $minimized-height-sm;
+        }
     }
 }
 
@@ -38,18 +53,58 @@ $transition-out: max-height 0.15s ease-out;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100%;
-    height: 200px;
+    height: 50px;
     position: absolute;
+
+    @include breakpoint(sm) {
+        height: 100px;
+    }
+    @include breakpoint(md) {
+        height: 120px;
+    }
+    @include breakpoint(lg) {
+        height: 150px;
+    }
+    @include breakpoint(xl) {
+        height: 200px;
+    }
 }
 
 .project {
-    grid-column-start: 1;
-    grid-column-end: 13;
-
     padding: 10px 0;
 
     &:first-child {
-        margin-top: 70px;
+        margin-top: 10px;
+
+        @include breakpoint(sm) {
+            margin-top: 20px;
+        }
+        @include breakpoint(md) {
+            margin-top: 0;
+        }
+        @include breakpoint(xl) {
+            margin-top: 70px;
+        }
+    }
+
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+    @include breakpoint(sm) {
+        grid-column-start: 1;
+        grid-column-end: 7;
+    }
+    @include breakpoint(md) {
+        grid-column-start: 1;
+        grid-column-end: 9;
+    }
+    @include breakpoint(lg) {
+        grid-column-start: 1;
+        grid-column-end: 11;
+    }
+    @include breakpoint(xl) {
+        grid-column-start: 1;
+        grid-column-end: 13;
     }
 }
 
@@ -65,19 +120,71 @@ $transition-out: max-height 0.15s ease-out;
 
 .show_more_line_start {
     grid-column-start: 1;
-    grid-column-end: 6;
+    grid-column-end: 2;
+
+    @include breakpoint(sm) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    @include breakpoint(md) {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    @include breakpoint(lg) {
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+    @include breakpoint(xl) {
+        grid-column-start: 1;
+        grid-column-end: 6;
+    }
 }
 
 
 .show_more_line_end {
-    grid-column-start: 8;
-    grid-column-end: 13;
+    grid-column-start: 4;
+    grid-column-end: 5;
+
+    @include breakpoint(sm) {
+        grid-column-start: 5;
+        grid-column-end: 7;
+    }
+    @include breakpoint(md) {
+        grid-column-start: 6;
+        grid-column-end: 9;
+    }
+    @include breakpoint(lg) {
+        grid-column-start: 7;
+        grid-column-end: 11;
+    }
+    @include breakpoint(xl) {
+        grid-column-start: 8;
+        grid-column-end: 13;
+    }
 }
 
 .show_more_btn_container {
-    grid-column-start: 6;
-    grid-column-end: 8;
     justify-self: center;
+
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+    @include breakpoint(sm) {
+        grid-column-start: 3;
+        grid-column-end: 5;
+    }
+    @include breakpoint(md) {
+        grid-column-start: 4;
+        grid-column-end: 6;
+    }
+    @include breakpoint(lg) {
+        grid-column-start: 5;
+        grid-column-end: 7;
+    }
+    @include breakpoint(xl) {
+        grid-column-start: 6;
+        grid-column-end: 8;
+    }
 }
 
 .show_more_btn {
@@ -87,7 +194,3 @@ $transition-out: max-height 0.15s ease-out;
     border-radius: 8px;
     cursor: pointer;
 }
-
-// .hidden {
-//     display: none !important;
-// }

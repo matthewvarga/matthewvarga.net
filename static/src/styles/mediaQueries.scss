@@ -1,7 +1,10 @@
 @import "./variables";
 
 @mixin breakpoint($size) {
-    @if $size == sm {
+    @if $size == xs {
+        @media (min-width: 480px) {@content;}
+    }
+    @else if $size == sm {
         @media (min-width: 480px) {@content;}
     } 
     @else if $size == md {
