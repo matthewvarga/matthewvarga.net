@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import ContactLink from '../../contact_link/index';
 import styles from './styles.module';
 
 class Quote extends Component {
@@ -13,7 +13,7 @@ class Quote extends Component {
             <div className={styles.quote}>
                 <h1 className={styles.text}>In need of a website? </h1>
                 <h1 className={styles.text}>are you hiring?</h1>
-                <Link to={"/"} className={styles.btn}>contact</Link>
+                <ContactLink className={styles.btn}/>
             </div>
         );
     }

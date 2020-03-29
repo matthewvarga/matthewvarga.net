@@ -3,6 +3,7 @@ import NavBar from '../navbar/index';
 import Header from './header/index';
 import Projects from './projects/index';
 import Quote from './quote/index';
+import Footer from '../footer/index';
 import styles from './styles.module';
 
 class LandingPage extends Component {
@@ -18,6 +19,7 @@ class LandingPage extends Component {
                 <Header/>
                 <Projects/>
                 <Quote/>
+                <Footer/>
             </div>
         );
     }

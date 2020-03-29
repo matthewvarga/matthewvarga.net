@@ -3,7 +3,7 @@ import ContactLink from '../contact_link/index';
 import config from '../../../config.json';
 import styles from './styles.module';
 
-class NavBar extends Component {
+class Footer extends Component {
 
     constructor(props) {
         super(props);
@@ -20,7 +20,7 @@ class NavBar extends Component {
 
     render() {
         return (
-            <div className={"grid_container " + styles.navbar}>
+            <div className={"grid_container " + styles.footer}>
                 <div className={styles.links}>
                     <a href={this.buildResumeLink()} target={"_blank"} className={styles.link}>resume</a>
                     <a href={"https://www.linkedin.com/in/matthew-varga/"} target={"_blank"} className={styles.link}>linkedin</a>
@@ -32,4 +32,4 @@ class NavBar extends Component {
     }
 }
 
-export default NavBar;
+export default Footer;

@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -82,6 +83,29 @@ func loadSettings(s *Settings) error {
 	return nil
 }
 
+// open file and stream directly from file to response
+func getResume(w http.ResponseWriter, r *http.Request) {
+	filename := "resume.pdf"
+
+	// Open file
+	f, err := os.Open(filename)
+	if err != nil {
+		fmt.Println(err)
+		w.WriteHeader(500)
+		return
+	}
+	defer f.Close()
+
+	//Set header
+	w.Header().Set("Content-type", "application/pdf")
+
+	//Stream to response
+	if _, err := io.Copy(w, f); err != nil {
+		fmt.Println(err)
+		w.WriteHeader(500)
+	}
+}
+
 func main() {
 	// read settings
 	var s Settings
@@ -97,6 +121,8 @@ func main() {
 
 	r := mux.NewRouter()
 	// Add your routes as needed
+
+	r.HandleFunc("/resume/", getResume).Methods("GET")
 
 	spa := spaHandler{staticPath: "./static/dist", indexPath: "index.html"}
 	r.PathPrefix("/").Handler(spa)

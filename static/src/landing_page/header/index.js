@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import ContactLink from '../../contact_link/index';
 import styles from './styles.module';
 
 class Header extends Component {
@@ -14,7 +14,7 @@ class Header extends Component {
                 <h1 className={styles.name}>Matthew Varga</h1>
                 <h3 className={styles.desc}>a brief overview of my work</h3>
                 <div className={styles.contact}>
-                    <Link to={"/"} className={styles.link}>contact</Link>
+                    <ContactLink className={styles.link}/>
                 </div>
             </div>
         );

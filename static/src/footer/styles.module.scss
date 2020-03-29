@@ -1,0 +1,29 @@
+@import '../styles/variables.scss';
+
+.footer {
+    grid-template-areas: 
+        "links links links links links . . . . . . ."
+    ;
+
+    background: $primary-dark-colour;
+}
+
+.links {
+    grid-area: links;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.link {
+    padding: 15px 15px;
+    margin: 5px 5px;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:first-child {
+        padding-left: 0;
+        margin-left: 0;
+    }
+}
