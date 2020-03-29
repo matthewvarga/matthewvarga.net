@@ -5,7 +5,7 @@
     background: $primary-highlight-colour;
 
     // 4 cols
-    padding: 80px 0 30px 0;
+    padding: 80px 0 40px 0;
     text-align: center;
     grid-template-areas: 
         "name name name name"
@@ -22,6 +22,7 @@
     }
     @include breakpoint(md) {
         text-align: left;
+        padding: 80px 0;
         grid-template-areas: 
             "name name name name name name . ."
             "desc desc desc desc . . . ."
