@@ -63,7 +63,7 @@ func (h spaHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 // and loads them into the Settings struct
 func loadSettings(s *Settings) error {
 	// open settings file
-	sf, err := os.Open("../config.json")
+	sf, err := os.Open("/go/bin/config.json")
 	if err != nil {
 		log.Fatal("Unable to open settings file")
 		return err
@@ -85,7 +85,7 @@ func loadSettings(s *Settings) error {
 
 // open file and stream directly from file to response
 func getResume(w http.ResponseWriter, r *http.Request) {
-	filename := "resume.pdf"
+	filename := "/go/bin/resume.pdf"
 
 	// Open file
 	f, err := os.Open(filename)
@@ -128,7 +128,7 @@ func main() {
 	r.PathPrefix("/").Handler(spa)
 
 	srv := &http.Server{
-		Addr: fmt.Sprintf("%s:%d", s.Address, s.Port),
+		Addr: fmt.Sprintf(":%d", s.Port),
 		// Good practice to set timeouts to avoid Slowloris attacks.
 		WriteTimeout: time.Second * 15,
 		ReadTimeout:  time.Second * 15,
@@ -143,7 +143,7 @@ func main() {
 			mode = "development"
 		}
 		log.Println("running in mode: ", mode)
-		log.Println(fmt.Sprintf("listening on: %s:%d", s.Address, s.Port))
+		log.Println(fmt.Sprintf("listening on :%d", s.Port))
 		if err := srv.ListenAndServe(); err != nil {
 			log.Fatal(err)
 		}

@@ -1,6 +1,6 @@
 {
     "productionMode": false,
     "address": "localhost",
-    "port": 3000,
+    "port": 8080,
     "buildFiles": "/go/bin/dist"
 }

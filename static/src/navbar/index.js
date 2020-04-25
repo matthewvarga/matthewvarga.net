@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ContactLink from '../contact_link/index';
-import config from '../../../config.json';
+import config from '../../config.json';
 import styles from './styles.module';
 
 class NavBar extends Component {
@@ -13,7 +13,7 @@ class NavBar extends Component {
         let url = "";
         url += config.productionMode ? "https://www.":"http://";
         url += config.address;
-        url += ":" + config.port;
+        // url += ":" + config.port;
         url += "/resume/";
         return url;
     }

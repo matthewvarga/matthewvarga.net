@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ContactLink from '../contact_link/index';
-import config from '../../../config.json';
+import config from '../../config.json';
 import styles from './styles.module';
 
 class Footer extends Component {
