@@ -63,7 +63,7 @@ func (h spaHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 // and loads them into the Settings struct
 func loadSettings(s *Settings) error {
 	// open settings file
-	sf, err := os.Open("config.json")
+	sf, err := os.Open("../config.json")
 	if err != nil {
 		log.Fatal("Unable to open settings file")
 		return err
@@ -124,7 +124,7 @@ func main() {
 
 	r.HandleFunc("/resume/", getResume).Methods("GET")
 
-	spa := spaHandler{staticPath: "./static/dist", indexPath: "index.html"}
+	spa := spaHandler{staticPath: s.BuildFiles, indexPath: "index.html"}
 	r.PathPrefix("/").Handler(spa)
 
 	srv := &http.Server{
