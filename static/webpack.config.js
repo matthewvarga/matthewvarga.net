@@ -90,5 +90,8 @@ module.exports = {
     ],
     resolve: {
         extensions: ['.js', '.jsx', '.scss']
+    },
+    devServer: {
+        port: 80
     }
 };

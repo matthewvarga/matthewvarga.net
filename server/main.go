@@ -2,11 +2,8 @@ package main
 
 import (
 	"context"
-	"encoding/json"
 	"flag"
 	"fmt"
-	"io"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -17,12 +14,11 @@ import (
 	"github.com/gorilla/mux"
 )
 
-// Settings ...
-type Settings struct {
-	ProductionMode bool   `json:"productionMode"`
-	Address        string `json:"address"`
-	Port           int    `json:"port"`
-	BuildFiles     string `json:"buildFiles"`
+// Configs ...
+type Configs struct {
+	buildFiles  string
+	sharedFiles string
+	port        int
 }
 
 // spaHandler implements the http.Handler interface, so we can use it
@@ -59,60 +55,14 @@ func (h spaHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	http.FileServer(http.Dir(h.staticPath)).ServeHTTP(w, r)
 }
 
-// loadSettings reads the config settings from config.json
-// and loads them into the Settings struct
-func loadSettings(s *Settings) error {
-	// open settings file
-	sf, err := os.Open("/go/bin/config.json")
-	if err != nil {
-		log.Fatal("Unable to open settings file")
-		return err
-	}
-	defer sf.Close()
-
-	// read settings file
-	byteValue, err := ioutil.ReadAll(sf)
-	if err != nil {
-		log.Fatal("Unable to read settings file")
-		return err
-	}
-
-	// convert to json
-	json.Unmarshal(byteValue, s)
-
-	return nil
-}
-
-// open file and stream directly from file to response
-func getResume(w http.ResponseWriter, r *http.Request) {
-	filename := "/go/bin/resume.pdf"
-
-	// Open file
-	f, err := os.Open(filename)
-	if err != nil {
-		fmt.Println(err)
-		w.WriteHeader(500)
-		return
-	}
-	defer f.Close()
-
-	//Set header
-	w.Header().Set("Content-type", "application/pdf")
-
-	//Stream to response
-	if _, err := io.Copy(w, f); err != nil {
-		fmt.Println(err)
-		w.WriteHeader(500)
-	}
-}
-
 func main() {
-	// read settings
-	var s Settings
-	err := loadSettings(&s)
+	// load flags
+	buildFiles, sharedFiles, port, err := loadFlags()
 	if err != nil {
 		log.Fatal(err)
 	}
+	// load config values from flags into struct
+	conf := Configs{buildFiles: *buildFiles, sharedFiles: *sharedFiles, port: *port}
 
 	// configure server with graceful shutdown
 	var wait time.Duration
@@ -121,14 +71,13 @@ func main() {
 
 	r := mux.NewRouter()
 	// Add your routes as needed
+	r.HandleFunc("/resume", conf.getResume).Methods("GET")
 
-	r.HandleFunc("/resume/", getResume).Methods("GET")
-
-	spa := spaHandler{staticPath: s.BuildFiles, indexPath: "index.html"}
+	spa := spaHandler{staticPath: conf.buildFiles, indexPath: "index.html"}
 	r.PathPrefix("/").Handler(spa)
 
 	srv := &http.Server{
-		Addr: fmt.Sprintf(":%d", s.Port),
+		Addr: fmt.Sprintf(":%d", conf.port),
 		// Good practice to set timeouts to avoid Slowloris attacks.
 		WriteTimeout: time.Second * 15,
 		ReadTimeout:  time.Second * 15,
@@ -138,12 +87,7 @@ func main() {
 
 	// Run our server in a goroutine so that it doesn't block.
 	go func() {
-		mode := "production"
-		if !s.ProductionMode {
-			mode = "development"
-		}
-		log.Println("running in mode: ", mode)
-		log.Println(fmt.Sprintf("listening on :%d", s.Port))
+		log.Println(fmt.Sprintf("listening on :%d", conf.port))
 		if err := srv.ListenAndServe(); err != nil {
 			log.Fatal(err)
 		}

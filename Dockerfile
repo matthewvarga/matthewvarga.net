@@ -37,7 +37,6 @@ FROM node:14.0.0-alpine3.11 AS client-build
 # set working directory, copy static files, and update path
 WORKDIR /app
 COPY ./static .
-COPY ./config.json .
 ENV PATH /app/node_modules/.bin:$PATH
 
 # install dependencies, and build static files to /app/dist
@@ -64,15 +63,13 @@ WORKDIR /usr/bin
 
 # copy the folder containing build file from server-build stage to /go/bin
 # copy the dist folder from client-build stage to /go/bin/static
-# copy config file to server
-# copy resume file to server
+# copy shared files to server
 COPY --from=server-build /go/src/app/bin /go/bin
 COPY --from=client-build /app/dist /go/bin/dist
-COPY ./config.json /go/bin
-COPY ./server/resume.pdf /go/bin
+COPY --from=server-build /go/src/app/files /go/bin/shared
 
 # expose port 8080 (the port the go server is running on)
 EXPOSE 8080
 
 # run the server on port 8080
-ENTRYPOINT ["/go/bin/server"]
+ENTRYPOINT ["/go/bin/server", "-buildFiles", "/go/bin/dist", "-sharedFiles", "/go/bin/shared", "-port", "8080"]
