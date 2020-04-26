@@ -28,6 +28,7 @@ $transition-out: max-height 0.15s ease-out;
     transition: $transition-in;
     max-height: $maximized-height-xs;
 
+
     @include breakpoint(sm) {
         max-height: $maximized-height-sm;
     }
@@ -66,7 +67,7 @@ $transition-out: max-height 0.15s ease-out;
         height: 150px;
     }
     @include breakpoint(xl) {
-        height: 200px;
+        height: 190px;
     }
 }
 
