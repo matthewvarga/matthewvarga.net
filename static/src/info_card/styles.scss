@@ -1,0 +1,23 @@
+.info_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .icon_wrapper {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        min-height: 32px;
+        padding: 0 20px 0 0;
+    }
+
+    // vertical layout
+    &.info_vert {
+        flex-direction: column;
+
+        .icon_wrapper {
+            padding: 0 0 10px 0;
+        }
+    }
+}

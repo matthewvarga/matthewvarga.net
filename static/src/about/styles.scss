@@ -1,0 +1,42 @@
+@import '../styles/variables';
+
+.about {
+    padding-top: $section-spacing;
+
+    .about_text_container {
+        margin: 10px 0;
+    }
+
+    .about_text {
+        &:last-child {
+            margin: 8px 0 0 0;
+        }
+    }
+
+    // override default button styles
+    .about_link {
+        padding: 0;
+        font-weight: 300;
+        font-size: 16px;
+        user-select: auto;
+    }
+
+    .about_cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 25px;
+    }
+
+    .about_card {
+        width: 50%;
+
+        &:nth-child(3), &:nth-child(4) {
+            margin-top: 25px;
+        }
+    }
+
+    .about_info_card_text {
+        font-size: 16px;
+    }
+}

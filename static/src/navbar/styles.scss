@@ -1,0 +1,10 @@
+@import '../styles/variables';
+
+.navbar {
+    .grid_content {
+        display: flex;
+        justify-content: end;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}

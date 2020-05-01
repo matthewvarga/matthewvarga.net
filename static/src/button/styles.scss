@@ -1,0 +1,131 @@
+@import '../styles/variables';
+
+.button, .link {
+    cursor: pointer;
+    box-sizing: border-box;
+    text-decoration: none;
+    user-select: none;
+
+    &:disabled {
+        cursor: default;
+        opacity: 0.3;
+    }
+
+    // add level shadows
+    @for $i from 1 through 5 {
+        &#{".level_#{$i}"} {
+            box-shadow: nth($shadows, $i);
+        }
+    }
+
+    // preset styles
+    &.primary, &.secondary {
+        border-radius: $primary-border-radius;
+        padding: 10px 20px;
+        transition: background $primary-transition,
+                    color $primary-transition,
+                    transform $primary-transition,
+                    border $primary-transition,
+                    box-shadow 0.01s ease-in-out; // faster than primary transition
+
+        &.lift:hover:enabled {
+            transform: $primary-transform;
+            box-shadow: $shadow-lift;
+        }
+    }
+
+    &.primary {
+        // fill styles
+        &.solid {
+            background: $primary-colour;
+            border: 1px solid $primary-colour;
+            color: $primary-background-colour;
+
+            &.hover_highlight:hover:enabled {
+                background: darken($primary-colour, $primary-highlight-percent);
+                border: 1px solid darken($primary-colour, $primary-highlight-percent);
+            }
+
+            &.active_highlight:active:enabled {
+                border: 1px solid $primary-colour;
+                box-shadow: 0 0 0 2px $primary-colour;
+            }
+        }
+
+        &.label {
+            background: unset;
+            color: $primary-colour;
+            border: none;
+
+            &.hover_highlight:hover:enabled {
+                color: darken($primary-colour, $primary-highlight-percent);
+            }
+        }
+    }
+
+    &.secondary {
+        // fill styles
+        &.solid {
+            background: $secondary-colour;
+            border: 1px solid $secondary-colour;
+            color: $primary-colour;
+
+            &.hover_highlight:hover:enabled {
+                background: darken($secondary-colour, $primary-highlight-percent);
+                border: 1px solid darken($secondary-colour, $primary-highlight-percent);
+            }
+
+            &.active_highlight:active:enabled {
+                border: 1px solid $secondary-colour;
+                box-shadow: 0 0 0 2px $secondary-colour;
+            }
+        }
+
+        &.label {
+            background: unset;
+            color: $secondary-colour;
+            border: none;
+
+            &.hover_highlight:hover:enabled {
+                color: darken($secondary-colour, $primary-highlight-percent);
+            }
+        }
+    }
+}
+
+
+.link {
+    // hover override for links, since they dont have the :enabled trait
+    &.primary {
+        &.solid {
+            &.hover_highlight:hover {
+                background: darken($primary-colour, $primary-highlight-percent);
+            }
+            &.active_highlight:active {
+                border: 1px solid $primary-colour;
+                box-shadow: 0 0 0 1px $primary-colour;
+            }
+        }
+        &.label {
+            .hover_highlight:hover {
+                color: darken($primary-colour, $primary-highlight-percent);
+            }
+        }
+    }
+    &.secondary {
+        &.solid {
+            &.hover_highlight:hover {
+                background: darken($secondary-colour, $primary-highlight-percent);
+            }
+            &.active_highlight:active {
+                border: 1px solid $secondary-colour;
+                box-shadow: 0 0 0 2px $secondary-colour;
+            }
+        }
+        &.label {
+            &.hover_highlight:hover {
+                color: darken($secondary-colour, $primary-highlight-percent);
+            }
+        }
+    }
+}

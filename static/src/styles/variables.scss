@@ -3,25 +3,40 @@
 *                  GENERAL STYLES                     *
 *                                                     *
 *******************************************************/ 
-$primary-background-colour: #E9EBEE; 
+$primary-border-radius: 5px;
 
-$primary-highlight-colour: #2A9BDD;
+$primary-highlight-percent: 10%;
+$secondary-highlight-percent: 30%;
 
-$primary-dark-colour: #0C2C49;
+$primary-transform: translate3d(0, -3px, 0);
 
+$section-spacing: 64px;
 
-$primary-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+/******************************************************
+*                                                     *
+*                      COLOURS                        *
+*                                                     *
+*******************************************************/ 
+// background colours
+$primary-background-colour: #FFFFFF;
+
+// content colours
+$primary-colour: #335EEA;
+$secondary-colour: #E9EDFC;
+$tertiary-colour: #7897FF; // icons
+
+// text colours
+$primary-text-colour: #000000; //353535
+$secondary-text-colour: #869AB8;
+$teriary-text-colour: #506690;
+
 
 /******************************************************
 *                                                     *
 *                    TEXT STYLES                      *
 *                                                     *
 *******************************************************/ 
-$primary-text-colour: #353535;
-$secondary-text-colour: #737373;
-$tertiary-text-colour: #b0b0b0;
 
-$primary-text-highlight-colour: #FFFFFF;
 
 /******************************************************
 *                                                     *
@@ -38,8 +53,19 @@ $z-index-level-10: 10;
 *                      SHADOWS                        *
 *                                                     *
 *******************************************************/ 
-$material-box-shadow-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-$material-box-shadow-2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-$material-box-shadow-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-$material-box-shadow-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-$material-box-shadow-5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+$shadow-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+$shadow-2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$shadow-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+$shadow-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+$shadow-5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+$shadows: $shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5;
+
+$shadow-lift: 0 10px 13px rgba(0,0,0,0.12), 0 1px 5px rgba(0,0,0,0.24);
+
+/******************************************************
+*                                                     *
+*                    TRANSITIONS                      *
+*                                                     *
+*******************************************************/ 
+$primary-transition: 0.15s ease-in-out;

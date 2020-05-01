@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ContactLink from '../contact_link/index';
-import styles from './styles.module';
+import Button from '../button';
+import './styles';
 
 class NavBar extends Component {
 
@@ -10,12 +10,12 @@ class NavBar extends Component {
 
     render() {
         return (
-            <div className={"grid_container " + styles.navbar}>
-                <div className={styles.links}>
-                    <a href={"http://localhost/resume"} target={"_blank"} className={styles.link}>resume</a>
-                    <a href={"https://www.linkedin.com/in/matthew-varga/"} target={"_blank"} className={styles.link}>linkedin</a>
-                    <a href={"https://github.com/matthewvarga"} target={"_blank"} className={styles.link}>github</a>
-                    <ContactLink className={styles.link} />
+            <div className={"navbar grid_container"}>
+                <div className={"grid_content"}>
+                    <Button preset={"primary"} fill={"label"} type={"link"} href={"http://localhost/resume"}>Resume</Button>
+                    <Button preset={"primary"} fill={"label"} type={"link"} href={"https://www.linkedin.com/in/matthew-varga/"}>LinkedIn</Button>
+                    <Button preset={"primary"} fill={"label"} type={"link"} href={"https://github.com/matthewvarga"}>GitHub</Button>
+                    <Button preset={"primary"} fill={"label"} type={"link"} href={""}>Contact</Button>
                 </div>
             </div>
         );

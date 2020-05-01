@@ -1,0 +1,13 @@
+@import '../styles/variables';
+
+.demos {
+    padding-top: $section-spacing;
+
+    .demos_title, .demos_desc {
+        text-align: center;
+    }
+
+    .demos_desc {
+        margin-top: 10px;
+    }
+}

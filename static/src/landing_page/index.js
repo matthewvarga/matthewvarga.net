@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import NavBar from '../navbar/index';
-import Header from './header/index';
-import Projects from './projects/index';
-import Quote from './quote/index';
-import Footer from '../footer/index';
-import styles from './styles.module';
+import NavBar from '../navbar';
+import Header from '../header';
+import About from '../about';
+import Skills from '../skills';
+import Demos from '../demos';
+import './styles';
 
 class LandingPage extends Component {
 
@@ -14,13 +14,14 @@ class LandingPage extends Component {
 
     render() {
         return (
-            <div className={styles.landing_page}>
+            <div>
                 <NavBar/>
                 <Header/>
-                <Projects/>
-                <Quote/>
-                <Footer/>
+                <About/>
+                <Skills/>
+                <Demos/>
             </div>
+            
         );
     }
 }

@@ -12,7 +12,7 @@ html, body, #root {
     height: 100%;
     display: flex;
     flex-direction: column;
-    background: $primary-background-colour;
+    
 }
 
 /******************************************************
@@ -20,72 +20,26 @@ html, body, #root {
 *                    TEXT STYLES                      *
 *                                                     *
 *******************************************************/ 
-html, body, #root {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    line-height: 14px;
+html, body, #root, h1, h2, h3, h4, h5, h6, p, a, button {
+    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
     color: $primary-text-colour;
-
-    @include breakpoint(sm) {
-        font-size: 14px;
-        line-height: 16px;
-    }
-    @include breakpoint(lg) {
-        font-size: 16px;
-        line-height: 20px;
-    }
-    @include breakpoint(xl) {
-        font-size: 16px;
-        line-height: 22px;
-    }
-    
-}
-
-p, h1, h2, h3, h4, h5 {
-    font-weight: 500;
     margin: 0;
     padding: 0;
-    
 }
-
-h1, h3 {
-    font-family: Geometos-Rounded, Arial, Helvetica, sans-serif;
-}
-
 h1 {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 22px;
-
-    @include breakpoint(lg) {
-        font-size: 24px;
-        line-height: 26px;
-    }
+    font-size: 67px;
 }
-
 h2 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    line-height: 18px;
-
-    @include breakpoint(lg) {
-        font-size: 22px;
-        line-height: 20px;
-    }
+    font-size: 30px;
 }
-
-h3 {
-    font-size: 16px;
-}
-
 p {
-    font-family: Bahnschrift, Arial, Helvetica, sans-serif;
-    font-weight: 300;
+    line-height: 26px;
+    color: $secondary-text-colour;
 }
-
 a {
-    text-decoration: none;
-    color: $primary-text-highlight-colour;
+    font-weight: 500;
 }
 
 @font-face {
@@ -141,4 +95,25 @@ a {
         grid-template-columns: 72.5px 72.5px 72.5px 72.5px 72.5px 72.5px 72.5px 72.5px 72.5px 72.5px 72.5px 72.5px;
         grid-column-gap: 30px;
     }
+}
+
+.grid_content {
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+    padding: 0 82px;
+
+    @include breakpoint(sm) {
+        grid-column-end: 7;
+    }
+    @include breakpoint(md) {
+        grid-column-end: 9;
+    }
+    @include breakpoint(lg) {
+        grid-column-end: 11;
+    }
+    @include breakpoint(xl) {
+        grid-column-end: 13;
+    }
+
 }
