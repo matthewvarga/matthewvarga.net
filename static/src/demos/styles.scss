@@ -1,5 +1,8 @@
 @import '../styles/variables';
 
+$angle-size: 215px;
+$bg-offset: 15px;
+
 .demos {
     padding-top: $section-spacing;
 
@@ -9,5 +12,27 @@
 
     .demos_desc {
         margin-top: 10px;
+    }
+
+    .demos_carousel {
+        position: relative;
+        margin-top: 32px;
+    }
+
+    .demos_angle {
+        position: absolute;
+        right: 0;
+        margin-top: -$angle-size;
+        height: $angle-size;
+        fill: $secondary-background-colour;
+    }
+
+    .demos_behind {
+        width: 100%;
+        height: $bg-offset;
+        position: absolute;
+        left: 0;
+        margin-top: -$bg-offset;
+        background: $secondary-background-colour;
     }
 }

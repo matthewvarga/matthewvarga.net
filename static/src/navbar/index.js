@@ -11,7 +11,7 @@ class NavBar extends Component {
     render() {
         return (
             <div className={"navbar grid_container"}>
-                <div className={"grid_content"}>
+                <div className={"navbar_content grid_content"}>
                     <Button preset={"primary"} fill={"label"} type={"link"} href={"http://localhost/resume"}>Resume</Button>
                     <Button preset={"primary"} fill={"label"} type={"link"} href={"https://www.linkedin.com/in/matthew-varga/"}>LinkedIn</Button>
                     <Button preset={"primary"} fill={"label"} type={"link"} href={"https://github.com/matthewvarga"}>GitHub</Button>

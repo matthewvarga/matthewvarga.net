@@ -1,0 +1,44 @@
+@import '../styles/variables';
+
+$btn-offset: -28px; 
+$btn-icon-size: 20px;
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: $z-index-level-5;
+    .carousel_btn {
+        position: relative;
+        // override default
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 16px;
+
+        &:first-child {
+            margin-right: $btn-offset;
+        }
+        &:last-child {
+            margin-left: $btn-offset;
+        }
+    }
+
+    .carousel_btn_icon {
+        width: $btn-icon-size;
+        height: $btn-icon-size;
+        fill: $primary-background-colour;
+    }
+
+    .carousel_content {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        background: $primary-background-colour;
+        height: 300px;
+        box-shadow: $shadow-1;
+        border-radius: $primary-border-radius;
+    }
+}

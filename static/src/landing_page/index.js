@@ -4,6 +4,7 @@ import Header from '../header';
 import About from '../about';
 import Skills from '../skills';
 import Demos from '../demos';
+import Footer from '../footer';
 import './styles';
 
 class LandingPage extends Component {
@@ -20,6 +21,8 @@ class LandingPage extends Component {
                 <About/>
                 <Skills/>
                 <Demos/>
+                <div className={"landing_page_spacer"}/>
+                <Footer/>
             </div>
             
         );

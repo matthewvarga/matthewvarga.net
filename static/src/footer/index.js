@@ -1,0 +1,26 @@
+import React, { Component } from 'react';
+import Button from '../button';
+import './styles';
+
+class Footer extends Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div className={"footer grid_container"}>
+                <div className={"footer_content grid_content"}>
+                    <span className={"footer_name"}>Matthew Varga</span>
+                    <Button preset={"secondary"} fill={"label"} type={"link"} href={"http://localhost/resume"}>Resume</Button>
+                    <Button preset={"secondary"} fill={"label"} type={"link"} href={"https://www.linkedin.com/in/matthew-varga/"}>LinkedIn</Button>
+                    <Button preset={"secondary"} fill={"label"} type={"link"} href={"https://github.com/matthewvarga"}>GitHub</Button>
+                    <Button preset={"secondary"} fill={"label"} type={"link"} href={""}>Contact</Button>
+                </div>
+            </div>
+        );
+    }
+}
+
+export default Footer;
