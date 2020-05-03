@@ -21,8 +21,8 @@ class About extends Component {
                     <Carousel className={"demos_carousel"}>
                         <Panel title={"criperme"} img={crispermeImg} desc={"Crisperme is a Toronto-based strartup that aims to connect students with researchers in their industry to aid in editing scientific papers. This application includes automated file transfer and paympent processing capabilities."}/>
                         <Panel title={"alzheimers-children.ca"} img={alzheimersImg} desc={"Crisperme is a Toronto-based strartup that aims to connect students with researchers in their industry to aid in editing scientific papers. This application includes automated file transfer and paympent processing capabilities."}/>
-                        <Panel title={"alzheimers-children.ca"} img={crispermeImg} desc={"Crisperme is a Toronto-based strartup that aims to connect students with researchers in their industry to aid in editing scientific papers. This application includes automated file transfer and paympent processing capabilities."}/>
-                        <Panel title={"alzheimers-children.ca"} img={alzheimersImg} desc={"Crisperme is a Toronto-based strartup that aims to connect students with researchers in their industry to aid in editing scientific papers. This application includes automated file transfer and paympent processing capabilities."}/>
+                        <Panel title={"hello"} img={crispermeImg} desc={"test2."}/>
+                        <Panel title={"world"} img={alzheimersImg} desc={"test3."}/>
                     </Carousel>
                     <Triangle className={"demos_angle"}/>
                     <div className={"demos_behind"}/>

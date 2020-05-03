@@ -38,10 +38,15 @@ class Carousel extends Component {
         let panels = [];
         // only single child, so no need for wrapper 
         if (this.props.children && !this.props.children.length)  return this.props.children;
+
+        let nextPanel = (this.state.activeIndex === this.props.children.length - 1) ? 0 : this.state.activeIndex + 1;
+        let prevPanel = (this.state.activeIndex === 0) ? this.props.children.length - 1 : this.state.activeIndex - 1;
         
         for(let i = 0; i < this.props.children.length; i++) {
 
-            let classes = (this.state.activeIndex === i ? "carousel_panel carousel_panel_active_" + this.state.direction + " " : "carousel_panel carousel_panel_hidden_"  + this.state.direction + " " );
+            let classes = (this.state.activeIndex === i ? "carousel_panel carousel_panel_active_" + this.state.direction + " " : "carousel_panel carousel_panel_hidden_"  + this.state.direction + " " ) +
+                          (i === nextPanel ? "carousel_panel_next " : "") +
+                          (i === prevPanel ? "carousel_panel_prev " : "");
 
             panels.push (
                 <span className={classes} key={"carousel_panel_" + i}>

@@ -49,24 +49,28 @@ $btn-icon-size: 20px;
     @keyframes slideOutLeft {
         from {
             right: 0;
+            visibility: visible;
         }
         to {
-            right: 50%;
+            right: 100%;
+            visibility: hidden;
         }
     }
 
     @keyframes slideOutRight {
         from {
             right: 0;
+            visibility: visible;
         }
         to {
-            right: -50%;
+            right: -100%;
+            visibility: hidden;
         }
     }
 
     @keyframes slideInLeft {
         from {
-            right: -50%;
+            right: -100%;
             visibility: visible;
         }
         to {
@@ -76,7 +80,7 @@ $btn-icon-size: 20px;
 
     @keyframes slideInRight {
         from {
-            right: 50%;
+            right: 100%;
             visibility: visible;
         }
         to {
@@ -84,24 +88,6 @@ $btn-icon-size: 20px;
         }
     }
 
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-    
-    @keyframes fadeOut {
-        from {
-            
-            opacity: 1;
-        }
-        to {
-            opacity: 0;
-        }
-    }
     .panel_img_container {
         background: $primary-background-colour;
     }
@@ -123,26 +109,80 @@ $btn-icon-size: 20px;
         transition: opacity $img-transition-duration linear, visibility $img-transition-duration step-end;
 
         .panel_img_container .panel_img {
-            opacity: 0;
+            opacity: 0.3;
             transition: opacity $img-transition-duration linear;
         }
     }
 
-    $text-transition-duration: 0.2s;
+    // overrides for animation
+    .panel .panel_text_container {
+        padding: 0;
+        position: relative;
+        width: 535px;
+        margin: 0;
 
-    // next text transition
-    .carousel_panel_active_r .panel_text_container {
-        animation: $text-transition-duration ease-in-out forwards slideInLeft;
-    }
-    .carousel_panel_hidden_r .panel_text_container {
-        animation: $text-transition-duration ease-in-out forwards slideOutLeft;
     }
 
-    // prev text transition
-    .carousel_panel_active_l .panel_text_container {
-        animation: $text-transition-duration ease-in-out forwards slideInRight;
+    .panel_title {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        margin-top: 32px;
     }
-    .carousel_panel_hidden_l .panel_text_container {
-        animation: $text-transition-duration ease-in-out forwards slideOutRight;
+
+    .panel_text {
+        position: absolute;
+        width: 100%;
+        padding: 72px 64px 64px 64px;
+        box-sizing: border-box;
+    }
+
+
+    $title-duration: 0.6s;
+    $text-duration: 0.8s;
+
+
+    // next title transition
+    .carousel_panel_active_r .panel_text_container .panel_title {
+        animation: $title-duration ease-in-out forwards slideInLeft;
+    }
+    // next title out transition
+    // need to add to the panel_prev only since it was previously the active one, so we 
+    // ant to transition it out of frame
+    .carousel_panel_hidden_r.carousel_panel_prev .panel_text_container .panel_title {
+        animation: $title-duration ease-in-out forwards slideOutLeft;
+    }
+
+    // next desc in transition
+    .carousel_panel_active_r .panel_text_container .panel_text {
+        animation: $text-duration ease-in-out forwards slideInLeft;
+    }
+    // next desc out transition
+    // need to add to the panel_prev only since it was previously the active one, so we 
+    // ant to transition it out of frame
+    .carousel_panel_hidden_r.carousel_panel_prev .panel_text_container .panel_text {
+        animation: $text-duration ease-in-out forwards slideOutLeft;
+    }
+
+    // prev title transition
+    .carousel_panel_active_l .panel_text_container .panel_title {
+        animation: $title-duration ease-in-out forwards slideInRight;
+    }
+    // prev title out transition
+    // need to add to the panel_next only since it was previously the active one, so we 
+    // ant to transition it out of frame
+    .carousel_panel_hidden_l.carousel_panel_next .panel_text_container .panel_title {
+        animation: $title-duration ease-in-out forwards slideOutRight;
+    }
+
+    // prev text in transition
+    .carousel_panel_active_l .panel_text_container .panel_text {
+        animation: $text-duration ease-in-out forwards slideInRight;
+    }
+    // prev text out transition
+    // need to add to the panel_next only since it was previously the active one, so we 
+    // ant to transition it out of frame
+    .carousel_panel_hidden_l.carousel_panel_next .panel_text_container .panel_text {
+        animation: $text-duration ease-in-out forwards slideOutRight;
     }
 }
