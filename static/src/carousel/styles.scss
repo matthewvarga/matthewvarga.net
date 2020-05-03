@@ -9,6 +9,13 @@ $btn-icon-size: 20px;
     align-items: center;
     justify-content: center;
     z-index: $z-index-level-5;
+
+    .carousel_btn_icon {
+        width: $btn-icon-size;
+        height: $btn-icon-size;
+        fill: $primary-background-colour;
+    }
+
     .carousel_btn {
         position: relative;
         // override default
@@ -17,6 +24,7 @@ $btn-icon-size: 20px;
         justify-content: center;
         align-items: center;
         padding: 16px;
+        z-index: $z-index-level-5;
 
         &:first-child {
             margin-right: $btn-offset;
@@ -24,12 +32,6 @@ $btn-icon-size: 20px;
         &:last-child {
             margin-left: $btn-offset;
         }
-    }
-
-    .carousel_btn_icon {
-        width: $btn-icon-size;
-        height: $btn-icon-size;
-        fill: $primary-background-colour;
     }
 
     .carousel_content {
@@ -40,5 +42,107 @@ $btn-icon-size: 20px;
         height: 300px;
         box-shadow: $shadow-1;
         border-radius: $primary-border-radius;
+        overflow: hidden;
+        position: relative;
+    }
+
+    @keyframes slideOutLeft {
+        from {
+            right: 0;
+        }
+        to {
+            right: 50%;
+        }
+    }
+
+    @keyframes slideOutRight {
+        from {
+            right: 0;
+        }
+        to {
+            right: -50%;
+        }
+    }
+
+    @keyframes slideInLeft {
+        from {
+            right: -50%;
+            visibility: visible;
+        }
+        to {
+            right: 0;
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            right: 50%;
+            visibility: visible;
+        }
+        to {
+            right: 0;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeOut {
+        from {
+            
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+    .panel_img_container {
+        background: $primary-background-colour;
+    }
+
+    $img-transition-duration: 0.2s;
+    // img transition (same for both directions)
+    .carousel_panel.carousel_panel_active_, .carousel_panel.carousel_panel_active_r, .carousel_panel.carousel_panel_active_l {
+        visibility: visible;
+        transition: opacity $img-transition-duration linear $img-transition-duration, 
+                    visibility $img-transition-duration step-start $img-transition-duration;
+        
+        .panel_img_container .panel_img{
+            opacity: 1;
+            transition: opacity $img-transition-duration linear $img-transition-duration;
+        }
+    }
+    .carousel_panel.carousel_panel_hidden_, .carousel_panel.carousel_panel_hidden_r, .carousel_panel.carousel_panel_hidden_l {
+        visibility: hidden;
+        transition: opacity $img-transition-duration linear, visibility $img-transition-duration step-end;
+
+        .panel_img_container .panel_img {
+            opacity: 0;
+            transition: opacity $img-transition-duration linear;
+        }
+    }
+
+    $text-transition-duration: 0.2s;
+
+    // next text transition
+    .carousel_panel_active_r .panel_text_container {
+        animation: $text-transition-duration ease-in-out forwards slideInLeft;
+    }
+    .carousel_panel_hidden_r .panel_text_container {
+        animation: $text-transition-duration ease-in-out forwards slideOutLeft;
+    }
+
+    // prev text transition
+    .carousel_panel_active_l .panel_text_container {
+        animation: $text-transition-duration ease-in-out forwards slideInRight;
+    }
+    .carousel_panel_hidden_l .panel_text_container {
+        animation: $text-transition-duration ease-in-out forwards slideOutRight;
     }
 }

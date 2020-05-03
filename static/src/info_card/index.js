@@ -17,7 +17,7 @@ class InfoCard extends Component {
             <div className={this.classes}>
                 <div className={"icon_wrapper"}>{this.props.icon}</div>
                 <div className={"info_text_container"}>
-                    <h4>{this.props.title}</h4>
+                    <h3>{this.props.title}</h3>
                     {this.props.children}
                 </div>
             </div>

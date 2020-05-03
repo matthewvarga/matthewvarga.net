@@ -1,5 +1,6 @@
 @import '../styles/variables';
 
 .icon {
-    fill: $tertiary-colour;
+    // fill: $tertiary-colour;
+    fill: lighten($primary-colour, $secondary-highlight-percent);
 }

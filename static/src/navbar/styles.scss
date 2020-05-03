@@ -6,5 +6,12 @@
         justify-content: end;
         padding-top: 10px;
         padding-bottom: 10px;
+
+        
+    }
+
+    // override default hover styles
+    .navbar_btn.primary.hover_highlight:hover  {
+        color: lighten($primary-colour, $tertiary-highlight-percent);
     }
 }
