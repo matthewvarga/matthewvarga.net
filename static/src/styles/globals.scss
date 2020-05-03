@@ -28,7 +28,13 @@ html, body, #root, h1, h2, h3, h4, h5, h6, p, a, button {
     padding: 0;
 }
 h1 {
-    font-size: 67px;
+    font-size: 62px;
+    line-height: 55px;
+
+    @include breakpoint(md) {
+        font-size: 67px;
+        line-height: 62px;
+    }
 }
 h2 {
     font-size: 30px;
@@ -103,19 +109,23 @@ a {
     grid-column-start: 1;
     grid-column-end: 5;
 
-    padding: 0 82px;
+    padding: 0 10px;
 
     @include breakpoint(sm) {
         grid-column-end: 7;
+        padding: 0 20px;
     }
     @include breakpoint(md) {
         grid-column-end: 9;
+        padding: 0 48px;
     }
     @include breakpoint(lg) {
         grid-column-end: 11;
+        padding: 0 64px;
     }
     @include breakpoint(xl) {
         grid-column-end: 13;
+        padding: 0 82px;
     }
 
 }

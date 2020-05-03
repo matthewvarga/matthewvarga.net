@@ -1,13 +1,29 @@
 @import '../styles/variables';
+@import '../styles/mediaQueries';
 
 .navbar {
     .navbar_content {
         display: flex;
-        justify-content: end;
+        justify-content: center;
         padding-top: 10px;
         padding-bottom: 10px;
 
-        
+        .navbar_btn {
+            padding: 5px 10px;
+        }
+
+        @include breakpoint(sm) {
+            justify-content: end;
+            .navbar_btn {
+                padding: 10px 15px;
+            }
+        }
+
+        @include breakpoint(md) {
+            .navbar_btn {
+                padding: 10px 20px;
+            }
+        } 
     }
 
     // override default hover styles

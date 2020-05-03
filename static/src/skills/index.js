@@ -11,17 +11,17 @@ class Skills extends Component {
         return (
             <div className={"skills grid_container"}>
                 <div className={"skills_content grid_content"}>
-                    <InfoCard icon={<IconCode/>} title={"Frontend"} icon_placement={"top"}>
+                    <InfoCard icon={<IconCode/>} title={"Frontend"} icon_placement={"top"} className={"skills_info_card"}>
                         <p>JavaScript (React, Redux, Marko, Jest)</p>
                         <p>SCSS, CSS, HTML</p>
                         <p>Webpack, Babel</p>
                     </InfoCard>
-                    <InfoCard icon={<IconDatabase/>} title={"Backend"} icon_placement={"top"}>
+                    <InfoCard icon={<IconDatabase/>} title={"Backend"} icon_placement={"top"} className={"skills_info_card"}>
                         <p>Go (golang)</p>
                         <p>PHP, Node (express)</p>
                         <p>MySQL, MongoDB</p>
                     </InfoCard>
-                    <InfoCard icon={<IconInfrastructure/>} title={"Other"} icon_placement={"top"}>
+                    <InfoCard icon={<IconInfrastructure/>} title={"Other"} icon_placement={"top"} className={"skills_info_card"}>
                         <p>NGINX, Docker</p>
                         <p>Python, Java, C</p>
                     </InfoCard>
