@@ -92,7 +92,7 @@ $btn-icon-size: 20px;
         background: $primary-background-colour;
     }
 
-    $img-transition-duration: 0.2s;
+    $img-transition-duration: 0.3s;
     // img transition (same for both directions)
     .carousel_panel.carousel_panel_active_, .carousel_panel.carousel_panel_active_r, .carousel_panel.carousel_panel_active_l {
         visibility: visible;
@@ -138,8 +138,8 @@ $btn-icon-size: 20px;
     }
 
 
-    $title-duration: 0.6s;
-    $text-duration: 0.8s;
+    $title-duration: 0.4s;
+    $text-duration: 0.6s;
 
 
     // next title transition
