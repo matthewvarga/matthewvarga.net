@@ -9,7 +9,7 @@ class Button extends Component {
         this.emailRef = React.createRef();
 
         this.classes =  (props.className ? props.className + " " : "") +
-                        (props.type === "link" ? "link " : "button ") + 
+                        ((props.type === "link"  || props.type === "email") ? "link " : "button ") + 
                         (props.preset ? props.preset + " " : "") + 
                         (props.fill ? props.fill + " " : "solid ") + 
                         (props.hoverhighlight == false ? "" : "hover_highlight " ) + 
