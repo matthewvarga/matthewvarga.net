@@ -13,7 +13,7 @@ class Footer extends Component {
             <div className={"footer grid_container"}>
                 <div className={"footer_content grid_content"}>
                     <span className={"footer_name"}>Matthew Varga</span>
-                    <Button className={"footer_btn"} preset={"secondary"} fill={"label"} type={"link"} href={"http://localhost/resume"}>Resume</Button>
+                    <Button className={"footer_btn"} preset={"secondary"} fill={"label"} type={"link"} href={"http://matthewvarga.net/resume"}>Resume</Button>
                     <Button className={"footer_btn"} preset={"secondary"} fill={"label"} type={"link"} href={"https://www.linkedin.com/in/matthew-varga/"}>LinkedIn</Button>
                     <Button className={"footer_btn"} preset={"secondary"} fill={"label"} type={"link"} href={"https://github.com/matthewvarga"}>GitHub</Button>
                     <Button className={"footer_btn"} preset={"secondary"} fill={"label"} type={"email"}>Contact</Button>
