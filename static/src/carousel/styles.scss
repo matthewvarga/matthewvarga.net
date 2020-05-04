@@ -1,4 +1,5 @@
 @import '../styles/variables';
+@import '../styles/mediaQueries';
 
 $btn-offset: -28px; 
 $btn-icon-size: 20px;
@@ -39,11 +40,20 @@ $btn-icon-size: 20px;
         flex-direction: row;
         flex-grow: 1;
         background: $primary-background-colour;
-        height: 300px;
+        height: 350px;
         box-shadow: $shadow-1;
         border-radius: $primary-border-radius;
         overflow: hidden;
         position: relative;
+
+        @include breakpoint(sm) {
+            height: 300px;     
+        }
+
+        @include breakpoint(xl) {
+            width: 900px; 
+            max-width: 900px;  
+        }
     }
 
     @keyframes slideOutLeft {
@@ -88,7 +98,7 @@ $btn-icon-size: 20px;
         }
     }
 
-    .panel_img_container {
+    .panel .panel_img_container {
         background: $primary-background-colour;
     }
 
@@ -118,23 +128,20 @@ $btn-icon-size: 20px;
     .panel .panel_text_container {
         padding: 0;
         position: relative;
-        width: 535px;
         margin: 0;
 
     }
 
-    .panel_title {
+    .panel .panel_title {
         position: absolute;
         text-align: center;
         width: 100%;
         margin-top: 32px;
     }
 
-    .panel_text {
+    .panel .panel_text {
         position: absolute;
-        width: 100%;
-        padding: 72px 64px 64px 64px;
-        box-sizing: border-box;
+        width: 100%; 
     }
 
 

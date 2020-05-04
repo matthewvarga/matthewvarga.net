@@ -4,16 +4,29 @@
 .skills {
     padding-top: $section-spacing;
 
+    .skills_title {
+        text-align: center;
+
+        @include breakpoint(md) {
+            text-align: left;
+        }
+    }
+
     .skills_content {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
+        margin-top: 20px;
         .skills_info_card {
             width: 100%;
             flex-direction: row;
             margin-top: 20px;
+
+            justify-content: center;
+            .info_text_container {
+                width: 50%;
+            }
 
             &:first-child {
                 margin: 0;
@@ -32,6 +45,11 @@
 
             .skills_info_card {
                 width: 50%;
+
+                justify-content: start;
+                .info_text_container {
+                    width: 100%;
+                }
 
                 margin-top: 0;
 
@@ -64,7 +82,8 @@
         @include breakpoint(lg) {
             .skills_info_card {
                 &:first-child {
-                    width: 300px;
+                    width: 220px;
+                    margin-right: 80px;
                 }
                 &:last-child {
                     width: 200px;
