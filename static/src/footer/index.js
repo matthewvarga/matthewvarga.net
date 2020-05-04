@@ -16,7 +16,7 @@ class Footer extends Component {
                     <Button className={"footer_btn"} preset={"secondary"} fill={"label"} type={"link"} href={"http://localhost/resume"}>Resume</Button>
                     <Button className={"footer_btn"} preset={"secondary"} fill={"label"} type={"link"} href={"https://www.linkedin.com/in/matthew-varga/"}>LinkedIn</Button>
                     <Button className={"footer_btn"} preset={"secondary"} fill={"label"} type={"link"} href={"https://github.com/matthewvarga"}>GitHub</Button>
-                    <Button className={"footer_btn"} preset={"secondary"} fill={"label"} type={"link"} href={""}>Contact</Button>
+                    <Button className={"footer_btn"} preset={"secondary"} fill={"label"} type={"email"}>Contact</Button>
                 </div>
             </div>
         );

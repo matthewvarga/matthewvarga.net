@@ -12,7 +12,7 @@ class Header extends Component {
                         <h1>Matthew Varga</h1>
                         <p className={"text"}>A brief overview of my skills, education, projects, and work experience.</p>
                         <div className={"buttons_container"}>
-                            <Button preset={"primary"} fill={"solid"} level={1} type={"link"} href={""}>Contact</Button>
+                            <Button preset={"primary"} fill={"solid"} level={1} type={"email"} >Contact</Button>
                             <Button preset={"secondary"} fill={"solid"} level={1} hoverhighlight={false} type={"link"} href={"https://github.com/matthewvarga"}>GitHub</Button>
                         </div>
                     </div>

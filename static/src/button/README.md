@@ -12,3 +12,4 @@ The Button component accepts all of the same attributes as the traditional HTML 
 | hoverhighlight | true <br/> false | true | Specifies if the button should have a highlight effect on hover |
 | activehighlight | true <br/> false | true | Specifies if the button should have a highlight effect when active. Note: if you have set lift to true, activehighlight will be false, regardless if you have also set it to true. The two can only be used exclusively |
 | level | 0, 1, 2, <br/> 3, 4, 5 | 0 | Specifies the level of shadow to be applied. It is recommeneded not to go above 2 |
+| type | button <br/> link <br/> email | button | Specifies the type of "button" to be rendered. link renders <a\/>, and email renders <a\/> with the href set. |

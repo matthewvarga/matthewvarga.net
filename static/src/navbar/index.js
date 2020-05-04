@@ -15,7 +15,7 @@ class NavBar extends Component {
                     <Button className={"navbar_btn"} preset={"primary"} fill={"label"} type={"link"} href={"http://localhost/resume"}>Resume</Button>
                     <Button className={"navbar_btn"} preset={"primary"} fill={"label"} type={"link"} href={"https://www.linkedin.com/in/matthew-varga/"}>LinkedIn</Button>
                     <Button className={"navbar_btn"} preset={"primary"} fill={"label"} type={"link"} href={"https://github.com/matthewvarga"}>GitHub</Button>
-                    <Button className={"navbar_btn"} preset={"primary"} fill={"label"} type={"link"} href={""}>Contact</Button>
+                    <Button className={"navbar_btn"} preset={"primary"} fill={"label"} type={"email"}>Contact</Button>
                 </div>
             </div>
         );
