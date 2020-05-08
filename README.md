@@ -16,8 +16,6 @@ Next, ensure you have all Go dependencies installed by retrieving the following 
 
 `go get github.com/gorilla/handlers`
 
-`go get golang.org/x/crypto/acme/autocert` (temporarily requried for ssl)
-
 Now that all dependencies are installed, you can begin development. 
 
 If you are working solely on **frontend** static changes, you need not to run the server, and can simply run `npm start` from the *statc* directory. This will open a development server on http://localhost:80 in which you can view the changes. 
