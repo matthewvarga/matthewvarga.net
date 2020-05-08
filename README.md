@@ -14,13 +14,15 @@ Next, ensure you have all Go dependencies installed by retrieving the following 
 
 `go get github.com/gorilla/mux`
 
+`go get github.com/gorilla/handlers`
+
 `go get golang.org/x/crypto/acme/autocert` (temporarily requried for ssl)
 
 Now that all dependencies are installed, you can begin development. 
 
 If you are working solely on **frontend** static changes, you need not to run the server, and can simply run `npm start` from the *statc* directory. This will open a development server on http://localhost:80 in which you can view the changes. 
 
-However, if you are working on the **backend**, or if you require interaction between the frontend and backend, you must have the server running. To do so, first build the frontend files by running `npm run build` from the *static* directory. Next run `go run . -buildfiles "../static/dist" - sharedFiles "./files" -port 80` from the *server* directory. This will open a development server on http://localhost:80.
+However, if you are working on the **backend**, or if you require interaction between the frontend and backend, you must have the server running. To do so, first build the frontend files by running `npm run build` from the *static* directory. Next run `go run . -buildFiles "../static/dist" -sharedFiles "./files" -port 80` from the *server* directory. This will open a development server on http://localhost:80.
 
 A breakdown of the configuration flags:
 

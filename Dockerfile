@@ -20,6 +20,7 @@ RUN apk add git
 
 # install go dependencies
 RUN go get github.com/gorilla/mux
+RUN go get github.com/gorilla/handlers
 RUN go get golang.org/x/crypto/acme/autocert
 
 # build go file to /go/src/app/bin/test/server
