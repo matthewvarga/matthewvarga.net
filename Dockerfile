@@ -20,6 +20,8 @@ RUN apk add git
 
 # install go dependencies
 RUN go get github.com/gorilla/mux
+RUN go get golang.org/x/crypto/acme/autocert
+
 # build go file to /go/src/app/bin/test/server
 RUN GOOS=linux go build -ldflags="-s -w" -o ./bin/server
 

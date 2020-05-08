@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"crypto/tls"
 	"flag"
 	"fmt"
 	"log"
@@ -11,7 +12,9 @@ import (
 	"path/filepath"
 	"time"
 
+	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
+	"golang.org/x/crypto/acme/autocert"
 )
 
 // Configs ...
@@ -76,21 +79,39 @@ func main() {
 	spa := spaHandler{staticPath: conf.buildFiles, indexPath: "index.html"}
 	r.PathPrefix("/").Handler(spa)
 
+	// ssl cert manager
+	certManager := autocert.Manager{
+		Prompt: autocert.AcceptTOS,
+		Cache:  autocert.DirCache("certs"),
+	}
+
+	// configure basic cors middleware
+	headersOk := handlers.AllowedHeaders([]string{"Accept, Content-Type, Content-Length, Accept-Encoding"})
+	originsOk := handlers.AllowedOrigins([]string{fmt.Sprintf(":%d", conf.port)})
+	methodsOk := handlers.AllowedMethods([]string{http.MethodGet, http.MethodPost, http.MethodOptions})
+
 	srv := &http.Server{
 		Addr: fmt.Sprintf(":%d", conf.port),
 		// Good practice to set timeouts to avoid Slowloris attacks.
 		WriteTimeout: time.Second * 15,
 		ReadTimeout:  time.Second * 15,
 		IdleTimeout:  time.Second * 60,
-		Handler:      r, // Pass our instance of gorilla/mux in.
+		Handler:      handlers.CORS(originsOk, headersOk, methodsOk)(r), // Pass our instance of gorilla/mux in.
+		TLSConfig: &tls.Config{
+			GetCertificate: certManager.GetCertificate,
+		},
 	}
 
 	// Run our server in a goroutine so that it doesn't block.
 	go func() {
 		log.Println(fmt.Sprintf("listening on :%d", conf.port))
-		if err := srv.ListenAndServe(); err != nil {
-			log.Fatal(err)
-		}
+
+		http.ListenAndServe(fmt.Sprintf(":%d", conf.port), certManager.HTTPHandler(nil))
+		log.Fatal(srv.ListenAndServeTLS("", ""))
+
+		// if err := srv.ListenAndServe(); err != nil {
+		// 	log.Fatal(err)
+		// }
 	}()
 
 	c := make(chan os.Signal, 1)
