@@ -39,7 +39,7 @@ class About extends Component {
                         </InfoCard>
                         <InfoCard className={"about_card"} icon={<IconContact />} title={"Contact"}>
                             <p className={"about_info_card_text"}>Are you an employer looking to hire, or in need of a website being built? You can email me by clicking 
-                                <Button preset={"primary"} fill={"label"} type={"link"} className={"about_link"} href={""}> here</Button>.
+                                <Button preset={"primary"} fill={"label"} type={"email"} className={"about_link"}> here</Button>.
                             </p>
                         </InfoCard>
                     </div>
