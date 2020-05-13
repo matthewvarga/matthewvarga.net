@@ -12,7 +12,7 @@ class Skills extends Component {
             <div className={"skills grid_container"}>
                 <div className={"grid_content"}>
                     <h2 className={"skills_title"}>Technologies</h2>
-                    <p>Below are some technologies that I am familiar with and have working experience with.</p>
+                    <p>Below are some technologies that I am familiar with and have working experience in.</p>
                     <div className={"skills_content"}>
                         <InfoCard icon={<IconCode/>} title={"Frontend"} icon_placement={"top"} className={"skills_info_card"}>
                             <p>JavaScript (React, Redux, Marko, Jest)</p>
