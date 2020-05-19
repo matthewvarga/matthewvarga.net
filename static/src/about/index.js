@@ -19,7 +19,7 @@ class About extends Component {
                 <div className={"grid_content"}>
                     <h2 className={"about_title"}>About Me</h2>
                     <div className={"about_text_container"}>
-                        <p className={"about_text"}>I am a soon to be graduate, and Software Developer with a passion for what I do. My interest in software development began at a young age when I would write mods for video games to add my own personal touch, and has continued to grow ever since. I've recently graduated from the University of Toronto Specialist Program in Computer Science, where I was fortunate enough to further pursue this passion.</p>
+                        <p className={"about_text"}>I am a Software Developer, and soon to be graduate with a passion for what I do. My interest in software development began at a young age when I would write mods for video games to add my own personal touch, and has continued to grow ever since. I've recently graduated from the University of Toronto Specialist Program in Computer Science, where I was fortunate enough to further pursue this passion.</p>
                         <p className={"about_text"}>When I am not writing code, I love spending time outdoors with my dog, hiking, and going fishing.</p>
                     </div>
                     <div className={"about_cards"}>
