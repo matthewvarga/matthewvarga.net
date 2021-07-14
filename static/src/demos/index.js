@@ -17,8 +17,8 @@ class About extends Component {
         return (
             <div className={"demos grid_container"}>
                 <div className={"grid_content"}>
-                    <h2 className={"demos_title"}>Are you looking to have a website built?</h2>
-                    <p className={"demos_desc"}>I have designed, built, and deployed numerous custom websites varying in size, including large-scale applications with automated payment processing and administrative reporting. Regardless of your needs, I can assist you.</p>
+                    <h2 className={"demos_title"}>Previous projects</h2>
+                    <p className={"demos_desc"}>I have designed, built, and deployed numerous custom websites varying in size, including large-scale applications with automated payment processing and administrative reporting. Below are some examples of these projects.</p>
                     <Carousel className={"demos_carousel"}>
                     <Panel title={"alzheimers-children.ca"} img={alzheimersImg} desc={"Alzheimers-children.ca is a website designed to reach children of people directly affected by Alzheimer's in hopes to further pursue medical research on the topic. It is a lightweight application built to help spread awareness and collect survey data."}/>
                         <Panel title={"crisperme"} img={crispermeImg} desc={"Crisperme was a Toronto-based startup that aimed to connect students with researchers in their industry, allowing for high-quality scientific paper editing. This application included automated file transfer and payment processing capabilities."}/>

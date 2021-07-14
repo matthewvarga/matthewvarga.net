@@ -24,21 +24,21 @@ class About extends Component {
                     </div>
                     <div className={"about_cards"}>
                         <InfoCard className={"about_card"} icon={<IconEducation />} title={"University of Toronto"}>
-                            <p className={"about_info_card_text"}>Specialist (Co-operative) Program in Computer Science - Comprehensive Stream.</p>
+                            <p>Specialist (Co-operative) Program in Computer Science - Comprehensive Stream.</p>
                         </InfoCard>
                         <InfoCard className={"about_card"} icon={<IconLinkedIn />} title={"LinkedIn"}>
-                            <p className={"about_info_card_text"}>
-                                for a more in-depth overview of my professional experiences, you can view my LinkedIn 
+                            <p>
+                                For a more in-depth overview of my professional experiences, you can view my LinkedIn 
                                 <Button preset={"primary"} fill={"label"} type={"link"} className={"about_link"} href={"https://www.linkedin.com/in/matthew-varga/"}> here</Button>.
                             </p>
                         </InfoCard>
                         <InfoCard className={"about_card"} icon={<IconGitHub />} title={"GitHub"}>
-                            <p className={"about_info_card_text"}>To view a complete list of my personal projects, you can visit my GitHub page 
+                            <p>To view a complete list of my personal projects, you can visit my GitHub page 
                                 <Button preset={"primary"} fill={"label"} type={"link"} className={"about_link"} href={"https://github.com/matthewvarga"}> here</Button>.
                             </p>
                         </InfoCard>
                         <InfoCard className={"about_card"} icon={<IconContact />} title={"Contact"}>
-                            <p className={"about_info_card_text"}>Are you an employer looking to hire, or in need of a website being built? You can email me by clicking 
+                            <p>Are you an employer looking to hire, or in need of a website being built? You can email me by clicking 
                                 <Button preset={"primary"} fill={"label"} type={"email"} className={"about_link"}> here</Button>.
                             </p>
                         </InfoCard>
